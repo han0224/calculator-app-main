@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+/* 테마 별 색을 다르게 지정하기 위해 prefers-color-scheme 미디어 퀴리 이용 할려했으나 body의 class 이름을 바꾸어 사용하는 것으로변경 */
+.theme1{
+    --main-background: hsl(222,26%, 31%);
+    --toggle-keypad-background:hsl(223,31%,20%);
+    --screen-background:hsl(224, 36%, 15%);
+
+    --key-background:hsl(225,21%,49%);
+    --key-shadow:hsl(224,28%,34%);
+    --key-background-toggle:hsl(6,63%,50%);
+    --key-shadow-toggle:hsl(6,70%,34%);
+    --num-key-background:hsl(30,25%,89%);
+    --num-key-shadow:hsl(30,25%,89%);
+
+    --text-color:hsl(221,14%,31%);
+    --text-color2: #ffffff;
+}
+
+.theme2{
+    --main-background:hsl(0,0%,90%);
+    --toggle-keypad-background:hsl(0,5%,81%);
+    --screen-background:hsl(0,0%,93%);
+
+    --key-background:hsl(185,42%,37%);
+    --key-shadow:hsl(185,58%,27%);
+    --key-background-toggle:hsl(25, 98%, 40%);
+    --key-shadow-toggle:hsl(25,99%,27%);
+    --num-key-background:hsl(45, 7%, 89%);
+    --num-key-shadow:hsl(45, 7%, 61%);
+    
+    --text-color:hsl(60,10%,19%);
+    --text-color2:hsl(0,0,100%);
+}
+
+.theme3{
+    --main-background:hsl(268, 75%, 9%);
+    --toggle-keypad-background:hsl(268, 71%, 12%);
+    --screen-background:hsl(268, 71%, 12%);
+
+    --key-background:hsl(281,89%,26%);
+    --key-shadow:hsl(285,91%,52%);
+    --key-background-toggle:hsl(176,100%,44%);
+    --key-shadow-toggle:hsl(177,92%,70%);
+    --num-key-background:hsl(268,47%,21%);
+    --num-key-shadow:hsl(290,70%,36%);
+
+    --text-color:hsl(52,100%,62%);
+    --text-color2:hsl(198,20%,13%);   
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body{
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--main-background);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.App{
+    width: 600px;
+    min-height: 100vh;
+    padding: auto;
+    margin-inline: auto;
+    
+}
+header {
+    display: flex;
+    justify-content: space-between;
+}
+header h1{
+    color: var(--num-key-background);
+}
+.theme-btn{
+
+}
+.labels{
+
+}
+.radio-btn{
+
+}
+.result-form{
+    text-align: center;
+    margin:10px 0px;
+
+}
+.result-form input{
+    padding: 16px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    text-align: right;
+    font-size: 64px;
+    background-color: var(--screen-background);
+    color: var(--text-color2);
+
+}
+.btns{
+    border-radius: 10px;
+    background-color: var(--toggle-keypad-background);
+    padding: 10px 10px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    /* grid-template-rows: 70px 70px 70px 70px 70px;
+    grid-template-columns:  100px 100px 100px 100px; */
+}
+
+.btns button{
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0px 10px;
+    font-size: 32px;
+}
+.num{
+    background-color: var(--num-key-background);
+    color: var(--text-color);
+}
+.del{
+    background-color: var(--key-background);
+    color: var(--text-color2);
+}
+.oper{
+    background-color: var(--num-key-background);
+    color: var(--text-color);
+}
+.reset{
+    background-color: var(--key-background);
+    color: var(--text-color2);
+}
+.result-btn{
+    background-color: var(--key-background-toggle);
+    color: var(--text-color2);
+}
