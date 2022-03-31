@@ -12,6 +12,7 @@
     --num-key-background:hsl(30,25%,89%);
     --num-key-shadow:hsl(30,25%,89%);
 
+    --input-color:hsl(30,25%,89%);
     --text-color:hsl(221,14%,31%);
     --text-color2: #ffffff;
 }
@@ -28,6 +29,7 @@
     --num-key-background:hsl(45, 7%, 89%);
     --num-key-shadow:hsl(45, 7%, 61%);
     
+    --input-color:hsl(60,10%,19%);
     --text-color:hsl(60,10%,19%);
     --text-color2:hsl(0,0,100%);
 }
@@ -44,6 +46,7 @@
     --num-key-background:hsl(268,47%,21%);
     --num-key-shadow:hsl(290,70%,36%);
 
+    --input-color:hsl(52,100%,62%);
     --text-color:hsl(52,100%,62%);
     --text-color2:hsl(198,20%,13%);   
 }
@@ -69,7 +72,7 @@ header {
     justify-content: space-between;
 }
 header h1{
-    color: var(--num-key-background);
+    color:  var(--input-color);
 }
 .theme-btn{
 
@@ -93,7 +96,7 @@ header h1{
     text-align: right;
     font-size: 64px;
     background-color: var(--screen-background);
-    color: var(--text-color2);
+    color: var(--input-color);
 
 }
 .btns{
@@ -106,9 +109,12 @@ header h1{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 10px;
+    grid-auto-flow: row;
     /* grid-template-rows: 70px 70px 70px 70px 70px;
     grid-template-columns:  100px 100px 100px 100px; */
 }
+item:nth-child(17){grid-row: auto / span 2;}
+item:nth-child(18){grid-row: auto / span 2;}
 
 .btns button{
     border-radius: 8px;
