@@ -15,19 +15,17 @@
     
     <header>
       <h1>calc</h1>
-      <div class="theme-btn">
-        <div class="labels">
-          <label for="theme1">1</label>
-          <label for="theme2">2</label>
-          <label for="theme3">3</label>
-        </div>
-        <div class="radio-btn" onclick="setTheme(event)">
+        <div class="theme-btn" onclick="setTheme(event)">
           <span>THEME</span>
-          <input type="radio" name="theme" id="theme1" checked>
-          <input type="radio" name="theme" id="theme2">
-          <input type="radio" name="theme" id="theme3">
+          <div class="toggle-btn">
+            <label for="theme1">1</label>
+            <label for="theme2">2</label>
+            <label for="theme3">3</label>
+            <input type="radio" name="theme" id="theme1" checked>
+            <input type="radio" name="theme" id="theme2">
+            <input type="radio" name="theme" id="theme3">
+          </div>
         </div>
-      </div>
     </header>
 
     <form class="result-form">

@@ -70,18 +70,27 @@ body{
 header {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 header h1{
     color:  var(--input-color);
 }
 .theme-btn{
-
+    display: flex;
+    align-items: flex-end;
+    margin: auto 0;
 }
-.labels{
-
+.toggle-btn{
+    background-color: var(--toggle-keypad-background);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
-.radio-btn{
 
+.toggle-btn label{
+    text-align: center;
+    width: 100%;
+    background-color: var(--main-background);
 }
 .result-form{
     text-align: center;
