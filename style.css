@@ -68,6 +68,7 @@ body{
     
 }
 header {
+    font-family: 'Manrope', sans-serif;
     color:  var(--input-color);
     display: flex;
     justify-content: space-between;
@@ -106,17 +107,25 @@ header span{
     background-color: var(--key-background-toggle);
 }
 .result-form{
+    font-family: 'Manrope', sans-serif;
     text-align: center;
+    border-radius: 10px;
     margin:10px 0px;
+    background-color: var(--screen-background);
+    padding: 16px;
+
 }
 .result-form input{
-    padding: 16px;
-    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
     border: none;
     width: 100%;
     text-align: right;
+    background-color: transparent;
     font-size: 64px;
-    background-color: var(--screen-background);
+    color: var(--input-color);
+}
+.result-form div{
+    text-align: right;
     color: var(--input-color);
 }
 .btns{
