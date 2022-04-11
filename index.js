@@ -10,67 +10,58 @@ const setTheme = (e) => {
 // 일단 eval 사용 -> 이후에 수정
 // output: [inputNum, expression]
 const opertor = (numArr, expression, oper) => {
-  console.log("!!!!!!!", expression, expression[expression.length - 1]);
   if (expression[expression.length - 1] === "=") {
     const ex = document.querySelector(".expression");
     ex.innerText = "";
     return [numArr, " " + numArr + " " + oper];
   }
-  console.log(expression);
   if (expression === "") {
-    console.log("비어있따고고고오롱롱ㄹ");
     return [numArr, " " + numArr + " " + oper];
   } else {
-    const num = expression.split("");
-    console.log("opertor() - expression: ", expression);
-    console.log("opertor(): ", eval((expression + numArr).replace(/x/gi, "*")));
     return [
       eval((expression + numArr).replace(/x/gi, "*")),
       " " + numArr + " " + oper,
     ];
   }
 };
+let flag = true; // 숫자가 뒤에 더 붙어야 하는 경우 true, 숫자를 다 지우고 다시 작성해야 하는 경우 false
 
 const clickBtn = (e) => {
   const btn = e.target.innerText; // 클릭한 버튼
   const inputNum = document.querySelector(".inputNum");
   const expression = document.querySelector(".expression");
-  let flag = true; // 숫자가 늘어나는 경우 true
-  if (btn === ".") {
-    if (!inputNum.value.includes(".")) {
-      inputNum.value += ".";
-    }
-  } else if (btn === "DEL" && flag) {
+  if (btn === "." && !inputNum.value.includes(".")) {
+    // .을 눌렀을 경우 inputNum에 .이 없는 경우만 추가
+    inputNum.value += ".";
+  } else if (btn === "DEL") {
+    // DEL 버튼을 눌렀을 때
     const tmp = [...inputNum.value];
     tmp.pop();
     if (tmp.length === 0) tmp.push("0");
     inputNum.value = tmp.join("");
-  } else if (
-    btn === "-" ||
-    btn === "+" ||
-    btn === "/" ||
-    btn === "x" ||
-    btn === "="
-  ) {
+    flag=true;
+  } else if (btn === "-" || btn === "+" || btn === "/" || btn === "x" || btn==='=') {
     flag = false;
     const [input, div] = opertor(inputNum.value, expression.innerText, btn);
-    console.log(input, div);
     inputNum.value = input;
     expression.innerText += div;
+
   } else if (btn === "RESET") {
     inputNum.value = 0;
     expression.innerText = "";
     flag = true;
-  } else {
+  } else if (!isNaN(btn)) {
     // 숫자버튼을 클릭했을 경우
+    console.log("flag: ", flag)
     if (!flag) {
-      flag = true;
       inputNum.value = "";
+      flag = true;
     }
-    if (expression.innerText[expression.innerText.length - 1] === "=") {
-      expression.innerText = "";
-    }
-    if (inputNum.value[0] === "0") inputNum.value = "";
-    inputNum.value += btn;
+      if (expression.innerText[expression.innerText.length - 1] === "=") {
+        expression.innerText = "";
+      }
+      if (inputNum.value[0] === "0") inputNum.value = "";
+      inputNum.value += btn;
+    
   }
 };
